@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class atomUp : MonoBehaviour {
+public class AtomUp : MonoBehaviour {
 
 	public Sprite newSprite;
 	public GameObject newAtom;

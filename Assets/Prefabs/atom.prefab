@@ -13,9 +13,9 @@ GameObject:
   - 114: {fileID: 11455792}
   - 198: {fileID: 19876778}
   - 199: {fileID: 19976778}
-  - 82: {fileID: 8207720}
+  - 82: {fileID: 8241744}
   m_Layer: 0
-  m_Name: atom
+  m_Name: Atom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,7 +44,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_Radius: .5
   m_Center: {x: 0, y: 0}
---- !u!82 &8207720
+--- !u!82 &8241744
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -52,8 +52,8 @@ AudioSource:
   m_GameObject: {fileID: 136916}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: f725203074b4b446e9d9b50b053adad1, type: 3}
-  m_PlayOnAwake: 0
+  m_audioClip: {fileID: 8300000, guid: 7a50a3ef5ebef400582332d9479c8c9c, type: 3}
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c323b462e3b594614934df358f7d4616, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound1: {fileID: 8300000, guid: f71251491cc2140969dccb57634866a5, type: 3}
+  sound1: {fileID: 8300000, guid: 7a50a3ef5ebef400582332d9479c8c9c, type: 3}
   sound2: {fileID: 8300000, guid: f725203074b4b446e9d9b50b053adad1, type: 3}
 --- !u!198 &19876778
 ParticleSystem:

@@ -6,10 +6,6 @@ public class AtomBlowUp : MonoBehaviour {
 	public AudioClip sound1;
 	public AudioClip sound2;
 	
-	//private float scaleSpeed = 20f;
-	private float finalScale = 25f;
-	private float timer = 0.0f;
-	// Use this for initialization
 	void Start () {
 		this.audio.clip = sound1;
 		this.audio.loop = true;

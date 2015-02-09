@@ -585,7 +585,7 @@ GameObject:
   - 82: {fileID: 202377312}
   m_Layer: 0
   m_Name: Sprite
-  m_TagString: Untagged
+  m_TagString: Person
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -665,7 +665,7 @@ Transform:
   m_PrefabInternal: {fileID: 1861498159}
   m_GameObject: {fileID: 202377306}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.3999996, y: -21.8999996, z: 0}
+  m_LocalPosition: {x: -21, y: -21.8999996, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -944,7 +944,7 @@ GameObject:
   - 4: {fileID: 333217171}
   - 212: {fileID: 333217170}
   m_Layer: 0
-  m_Name: dystopictree
+  m_Name: DystopicTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -994,7 +994,7 @@ GameObject:
   - 4: {fileID: 335960550}
   - 82: {fileID: 335960549}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: BackgroundMusic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1008,7 +1008,7 @@ AudioSource:
   m_GameObject: {fileID: 335960548}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 6de4593eef0f845cfab2dc1876debb98, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 343c8743955c54cdeab6c56c795bc300, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2311,7 +2311,7 @@ GameObject:
   - 124: {fileID: 758512225}
   - 81: {fileID: 758512224}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: MovingCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4078,6 +4078,47 @@ Prefab:
   m_RootGameObject: {fileID: 1224632277}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &1703137189
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1703137191}
+  - 114: {fileID: 1703137190}
+  m_Layer: 0
+  m_Name: CamControl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1703137190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1703137189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b488a985c53cd4281b71d427405e9575, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 758512227}
+  person: {fileID: 202377306}
+--- !u!4 &1703137191
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1703137189}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
 --- !u!1001 &1703420284
 Prefab:
   m_ObjectHideFlags: 0
@@ -4260,7 +4301,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 458158, guid: 615874940ea18d64b90c7065b20840f3, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 14.3999996
+      value: -21
       objectReference: {fileID: 0}
     - target: {fileID: 458158, guid: 615874940ea18d64b90c7065b20840f3, type: 2}
       propertyPath: m_LocalPosition.y
@@ -4331,6 +4372,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300010, guid: 7609f2b19bb7532419875e90350d6063,
         type: 3}
+    - target: {fileID: 158158, guid: 615874940ea18d64b90c7065b20840f3, type: 2}
+      propertyPath: m_TagString
+      value: Person
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 615874940ea18d64b90c7065b20840f3, type: 2}
   m_RootGameObject: {fileID: 202377306}
