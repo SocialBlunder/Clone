@@ -20,6 +20,7 @@ public class Movements : MonoBehaviour {
 		
 		if (Input.GetKeyDown(KeyCode.Space) && (isOnGround)) {
 			this.rigidbody2D.velocity = jumpPos;
+			audio.Play();
 		}
 
 		if (Input.GetKeyDown(KeyCode.UpArrow) && (isOnGround)) {
