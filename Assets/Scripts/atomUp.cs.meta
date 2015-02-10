@@ -2,9 +2,7 @@ fileFormatVersion: 2
 guid: 7f6af7968914649879a144bb53bab7d6
 MonoImporter:
   serializedVersion: 2
-  defaultReferences:
-  - newSprite: {fileID: 21300000, guid: 5242aba3d5c0e404eaae589a366e718a, type: 3}
-  - newAtom: {fileID: 136916, guid: 2043a66f1d9f34148a26807c7a419ef1, type: 2}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -5,8 +5,7 @@ public class AtomUp : MonoBehaviour {
 
 	public Sprite newSprite;
 	public GameObject newAtom;
-	
-	Vector3 atomPos = new Vector3 (33.3f, 19.2f, 0f);
+
 	// Use this for initialization
 	void Start () {
 	
@@ -14,13 +13,15 @@ public class AtomUp : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	
+
 	}
 	
 	void OnCollisionEnter2D(Collision2D collision) {
-		this.GetComponent<SpriteRenderer>().sprite = newSprite;
-		GameObject.Instantiate(newAtom);
-		newAtom.transform.position = atomPos;
+		Vector3 atomPos = new Vector3 (transform.position.x, transform.position.y + 12f, 0f);
+
+		GetComponent<SpriteRenderer>().sprite = newSprite;
+		GameObject.Instantiate (newAtom, atomPos, Quaternion.identity);
+
+		collider2D.enabled = false;
 	}
 }
