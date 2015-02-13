@@ -1,0 +1,116 @@
+fileFormatVersion: 2
+guid: be6d8f82c2bc2cc4cbe2d68d4464838e
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: RobotStanding
+    21300002: RobotLeftLegUp
+    21300004: RobotRightLegUp
+    21300006: StandingLeft
+    21300008: WalkingLeftLeftLegUp
+    21300010: WalkingLeftRightLegUp
+    21300012: StandingRight
+    21300014: WalkingRightRightLegUp
+    21300016: WalkingRightLeftLegUp
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 5
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: StandingLeft
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 517
+        width: 52
+        height: 96
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WalkingLeftLeftLegUp
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 418
+        width: 52
+        height: 91
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WalkingLeftRightLegUp
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 317
+        width: 62
+        height: 96
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: StandingRight
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 217
+        width: 52
+        height: 96
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WalkingRightRightLegUp
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 118
+        width: 52
+        height: 91
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WalkingRightLeftLegUp
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 17
+        width: 62
+        height: 96
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

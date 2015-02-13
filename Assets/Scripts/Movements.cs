@@ -19,9 +19,12 @@ public class Movements : MonoBehaviour {
 	private Vector3 jumpPos = new Vector3 (0f, 130f, 0f);
 	private Vector3 downRayCast;
 	private Vector3 playerPos;
+	private bool walkingDirection;
 	//Audio Variables
 	public AudioClip atomGet;
 	public AudioClip jump;
+	public GameObject robotSmashedLeft;
+	public GameObject robotSmashedRight;
 
 	// Use this for initialization
 	void Start () {
@@ -65,6 +68,26 @@ public class Movements : MonoBehaviour {
 			walkingIndex = 0;
 		}
 
+		if (Physics2D.Raycast (playerPos, downRayCast, 4f)) {
+			RaycastHit2D robotHit = Physics2D.Raycast (playerPos, downRayCast, 4f);
+
+			if (robotHit.transform.gameObject.tag == "Robot") {
+				Vector3 robotPos = robotHit.transform.position;
+				Destroy (robotHit.transform.gameObject);
+				score += 200;
+
+				GameObject robot = GameObject.Find("Robot");
+				
+				walkingDirection = robot.GetComponent<Robot>().walkingLeft;
+				
+				if (walkingDirection){
+					GameObject.Instantiate (robotSmashedLeft, robotPos, Quaternion.identity);
+				} else if (!walkingDirection) {
+					GameObject.Instantiate (robotSmashedRight, robotPos, Quaternion.identity);
+				}
+			}
+		}
+
 		//TODO: The UI countDown should probably be in GameController Object
 		countDown -= Time.deltaTime;
 		countDownText.text = countDown.ToString ("f0");
@@ -87,8 +110,12 @@ public class Movements : MonoBehaviour {
 				numOfAtomsText.text = numOfAtoms.ToString ();
 				score += 100;
 		}
-	}
 
+		if (collision.gameObject.CompareTag ("Robot")) {
+			levelmanager.LoadLevel("GameOver");
+		}
+	}
+	
 	//Function that switches sprite image based on movement
 	void WalkingCycle (int walkInd) {
 		this.GetComponent<SpriteRenderer>().sprite = walkingSprites[walkInd];
