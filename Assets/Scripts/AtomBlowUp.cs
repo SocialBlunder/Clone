@@ -2,14 +2,17 @@
 using System.Collections;
 
 public class AtomBlowUp : MonoBehaviour {
-
-	public AudioClip sound;
 	
 	private float timeParam = 0;
 
 	void Start () {
-		audio.clip = sound;
-		audio.Play();
+		GameObject audioTemp = GameObject.Find ("AudioClips");
+
+		AudioClip atomUp = audioTemp.GetComponent<AudioClips>().atomUp;
+
+		audio.clip = atomUp;
+		audio.loop = true;
+		audio.Play ();
 	}
 	
 	// Update is called once per frame
