@@ -4,25 +4,20 @@ using UnityEngine.UI;
 
 public class Movements : MonoBehaviour {
 
-	public LevelManager levelmanager;
-	//UI Variables
-	public Text numOfAtomsText;
-	private int numOfAtoms = 0;
-	public Text countDownText;
-	private float countDown = 300;
-	public Text scoreText;
-	private int score = 0;
+	public LevelManager levelManager;
+	public UI uI;
+	public AudioClips audioClips;
+
 	//Movement Variables
 	private float moveSpeed = 40.0f;
 	private int walkingIndex = 0;
-	public Sprite[] walkingSprites;
 	private Vector3 jumpPos = new Vector3 (0f, 130f, 0f);
 	private Vector3 downRayCast;
 	private Vector3 playerPos;
+	
+	//Animation Variables
+	public Sprite[] walkingSprites;
 	private bool walkingDirection;
-	//Audio Variables
-	public AudioClip atomGet;
-	public AudioClip jump;
 	public GameObject robotSmashedLeft;
 	public GameObject robotSmashedRight;
 
@@ -47,8 +42,7 @@ public class Movements : MonoBehaviour {
 		    (Physics2D.Raycast(playerPos, downRayCast, 4f))) {
 
 			rigidbody2D.velocity = jumpPos;
-			audio.clip = jump;
-			audio.Play();
+			audioClips.Jump ();
 
 		}
 
@@ -68,13 +62,18 @@ public class Movements : MonoBehaviour {
 			walkingIndex = 0;
 		}
 
+		//TODO: The transition from walking robot to smashed robot images can be
+		//done much better than this with a single sprite sheet and removing tags
+		//after smashed. It would require less code and less prefab objects.
 		if (Physics2D.Raycast (playerPos, downRayCast, 4f)) {
 			RaycastHit2D robotHit = Physics2D.Raycast (playerPos, downRayCast, 4f);
 
 			if (robotHit.transform.gameObject.tag == "Robot") {
 				Vector3 robotPos = robotHit.transform.position;
 				Destroy (robotHit.transform.gameObject);
-				score += 200;
+
+				audioClips.RobotCrush();
+				uI.AddToScore(200);
 
 				GameObject robot = GameObject.Find("Robot");
 				
@@ -87,32 +86,20 @@ public class Movements : MonoBehaviour {
 				}
 			}
 		}
-
-		//TODO: The UI countDown should probably be in GameController Object
-		countDown -= Time.deltaTime;
-		countDownText.text = countDown.ToString ("f0");
-
-		if (countDown <= 0f) {
-			levelmanager.LoadLevel("GameOver");
-		}
-
-		scoreText.text = score.ToString ();
 	}
 
 	void OnCollisionEnter2D(Collision2D collision) {
 		//Plays audio on collision with objects tagged as Atom
 		if (collision.gameObject.CompareTag ("Atom")) {
-				audio.clip = atomGet;
-				audio.Play ();
 
-				//UI Update
-				numOfAtoms += 1;
-				numOfAtomsText.text = numOfAtoms.ToString ();
-				score += 100;
+				audioClips.AtomGet();
+
+				uI.AddAtom();
+				uI.AddToScore(100);
 		}
 
 		if (collision.gameObject.CompareTag ("Robot")) {
-			levelmanager.LoadLevel("GameOver");
+			levelManager.LoadLevel("GameOver");
 		}
 	}
 	
