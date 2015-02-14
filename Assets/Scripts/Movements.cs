@@ -99,7 +99,8 @@ public class Movements : MonoBehaviour {
 		}
 
 		if (collision.gameObject.CompareTag ("Robot")) {
-			levelManager.LoadLevel("GameOver");
+			transform.collider2D.isTrigger = true;
+			//levelManager.LoadLevel("GameOver");
 		}
 	}
 	

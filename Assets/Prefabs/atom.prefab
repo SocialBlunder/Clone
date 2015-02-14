@@ -15,7 +15,7 @@ GameObject:
   - 199: {fileID: 19906286}
   - 82: {fileID: 8244876}
   m_Layer: 0
-  m_Name: Atom
+  m_Name: atom
   m_TagString: Atom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,7 +113,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c323b462e3b594614934df358f7d4616, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atomUp: {fileID: 8300000, guid: 7a50a3ef5ebef400582332d9479c8c9c, type: 3}
 --- !u!198 &19806286
 ParticleSystem:
   m_ObjectHideFlags: 1
