@@ -7,23 +7,23 @@ public class Movements : MonoBehaviour {
 	public LevelManager levelManager;
 	public UI uI;
 	public AudioClips audioClips;
+	Animator myAnimator;
 
 	//Movement Variables
 	private float moveSpeed = 40.0f;
-	private int walkingIndex = 0;
 	private Vector3 jumpPos = new Vector3 (0f, 130f, 0f);
 	private Vector3 downRayCast;
 	private Vector3 playerPos;
 	
 	//Animation Variables
-	public Sprite[] walkingSprites;
-	private bool walkingDirection;
+	private bool walkingDirection = true;
 	public GameObject robotSmashedLeft;
 	public GameObject robotSmashedRight;
+	private bool notDead = true;
 
 	// Use this for initialization
 	void Start () {
-
+		myAnimator = GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
@@ -32,14 +32,19 @@ public class Movements : MonoBehaviour {
 		downRayCast = transform.TransformDirection(Vector3.down);
 		playerPos = new Vector3 (transform.position.x, transform.position.y -10f, 0f);
 
-		//Function that switches sprite image based on movement
-		//Must be at beginning of update function to work properly
-		WalkingCycle (walkingIndex);
+		if (!Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.LeftArrow) && notDead){
+			
+			if (walkingDirection){
+				myAnimator.CrossFade ("SpriteStandingRight", 0.0f);
+			} else if (!walkingDirection){
+				myAnimator.CrossFade ("SpriteStandingLeft", 0.0f);
+			}
+		}
 
 		//Jump Movements
 		if ((Input.GetKeyDown(KeyCode.Space) || 
 		     Input.GetKeyDown(KeyCode.UpArrow)) && 
-		    (Physics2D.Raycast(playerPos, downRayCast, 4f))) {
+		    (Physics2D.Raycast(playerPos, downRayCast, 4f)) && notDead) {
 
 			rigidbody2D.velocity = jumpPos;
 			audioClips.Jump ();
@@ -47,19 +52,21 @@ public class Movements : MonoBehaviour {
 		}
 
 		//Left Movement
-		if (Input.GetKey(KeyCode.LeftArrow)) {
+		if (Input.GetKey(KeyCode.LeftArrow) && notDead) {
 			transform.position += Vector3.left * moveSpeed * Time.deltaTime;
-			walkingIndex = 3;
-			WalkingCycle(walkingIndex);
-			walkingIndex = 2;
+			
+			myAnimator.CrossFade ("SpriteWalkingLeft", 0.0f);
+
+			walkingDirection = false;
 		}
 
 		//Right Movement
-		if (Input.GetKey(KeyCode.RightArrow)) {
+		if (Input.GetKey(KeyCode.RightArrow) && notDead) {
 			transform.position += Vector3.right * moveSpeed * Time.deltaTime;
-			walkingIndex = 1;
-			WalkingCycle(walkingIndex);
-			walkingIndex = 0;
+			
+			myAnimator.CrossFade ("SpriteWalkingRight", 0.0f);
+
+			walkingDirection = true;
 		}
 
 		//TODO: The transition from walking robot to smashed robot images can be
@@ -68,7 +75,7 @@ public class Movements : MonoBehaviour {
 		if (Physics2D.Raycast (playerPos, downRayCast, 4f)) {
 			RaycastHit2D robotHit = Physics2D.Raycast (playerPos, downRayCast, 4f);
 
-			if (robotHit.transform.gameObject.tag == "Robot") {
+			if (robotHit.transform.gameObject.tag == "Robot" && notDead) {
 				Vector3 robotPos = robotHit.transform.position;
 				Destroy (robotHit.transform.gameObject);
 
@@ -99,13 +106,19 @@ public class Movements : MonoBehaviour {
 		}
 
 		if (collision.gameObject.CompareTag ("Robot")) {
+			notDead = false;
+
+			if (walkingDirection){
+				myAnimator.CrossFade ("ElectrocutionRight", 0.0f);
+			} else {
+				myAnimator.CrossFade ("ElectrocutionLeft", 0.0f);
+			}
+
+			audioClips.Electrocution();
+
+			rigidbody2D.velocity = jumpPos;
+
 			transform.collider2D.isTrigger = true;
-			//levelManager.LoadLevel("GameOver");
 		}
-	}
-	
-	//Function that switches sprite image based on movement
-	void WalkingCycle (int walkInd) {
-		this.GetComponent<SpriteRenderer>().sprite = walkingSprites[walkInd];
 	}
 }

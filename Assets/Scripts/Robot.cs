@@ -6,7 +6,7 @@ public class Robot : MonoBehaviour {
 	Animator myAnimator;
 
 	public bool walkingLeft = true;
-	private float moveSpeed = 22.0f;
+	public float moveSpeed = 22.0f;
 
 	// Use this for initialization
 	void Start () {
