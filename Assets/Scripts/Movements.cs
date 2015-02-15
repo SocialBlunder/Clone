@@ -105,7 +105,9 @@ public class Movements : MonoBehaviour {
 				uI.AddToScore(100);
 		}
 
-		if (collision.gameObject.CompareTag ("Robot")) {
+
+		if (collision.gameObject.CompareTag ("Robot") ||
+		    collision.gameObject.CompareTag ("HatchMonster")) {
 			notDead = false;
 
 			if (walkingDirection){
