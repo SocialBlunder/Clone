@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 5d54dacb8113049ac850fc3b9f7cce8d
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - moon: {fileID: 101182, guid: bf6d10a4adcc84b2b98f4de8c2faddfc, type: 2}
+  - person: {fileID: 110698, guid: 341f92788f6e642bb92bc142a5129e64, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
