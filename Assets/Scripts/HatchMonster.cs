@@ -14,11 +14,11 @@ public class HatchMonster : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (-40.0f > transform.position.y) {
+		if (-48.0f > transform.position.y) {
 			moveUp = true;
 		} 
 
-		if (transform.position.y > 14.0f) {
+		if (transform.position.y > 10.0f) {
 			moveUp = false;
 		}
 
