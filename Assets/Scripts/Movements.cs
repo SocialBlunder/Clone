@@ -99,10 +99,9 @@ public class Movements : MonoBehaviour {
 		//Plays audio on collision with objects tagged as Atom
 		if (collision.gameObject.CompareTag ("Atom")) {
 
-				audioClips.AtomGet();
-
-				uI.AddAtom();
-				uI.AddToScore(100);
+			audioClips.AtomGet();
+			uI.AddAtom();
+			uI.AddToScore(100);
 		}
 
 
@@ -110,7 +109,8 @@ public class Movements : MonoBehaviour {
 		    collision.gameObject.CompareTag ("HatchMonster") ||
 		    collision.gameObject.CompareTag ("SmallEnemy")) {
 			notDead = false;
-
+		
+			
 			if (walkingDirection){
 				myAnimator.CrossFade ("ElectrocutionRight", 0.0f);
 			} else {
@@ -118,7 +118,7 @@ public class Movements : MonoBehaviour {
 			}
 
 			audioClips.Electrocution();
-
+			
 			rigidbody2D.velocity = jumpPos;
 
 			transform.collider2D.isTrigger = true;

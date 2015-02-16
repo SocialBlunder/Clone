@@ -12,10 +12,12 @@ public class UI : MonoBehaviour {
 	private float countDown = 300;
 	public Text scoreText;
 	private int score = 0;
+	public Text numOfLivesText;
+	
 
 	// Use this for initialization
 	void Start () {
-	
+		numOfLivesText.text = GameStart.numOfLives.ToString ();
 	}
 	
 	// Update is called once per frame
@@ -37,5 +39,11 @@ public class UI : MonoBehaviour {
 		score += num;
 
 		scoreText.text = score.ToString ();
+	}
+	
+	public void RemoveLife(){
+		GameStart.numOfLives -= 1;
+		numOfLivesText.text = GameStart.numOfLives.ToString();
+
 	}
 }
