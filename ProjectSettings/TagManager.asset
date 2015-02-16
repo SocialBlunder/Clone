@@ -8,6 +8,7 @@ TagManager:
   - RobotTrigger
   - Robot
   - HatchMonster
+  - SmallEnemy
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
