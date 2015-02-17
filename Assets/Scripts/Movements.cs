@@ -60,7 +60,7 @@ public class Movements : MonoBehaviour {
 		}
 
 		//Left Movement
-		if (Input.GetKey(KeyCode.LeftArrow) && notDead) {
+		if (Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow) && notDead) {
 			transform.position += Vector3.left * moveSpeed * Time.deltaTime;
 
 			if (isOnGround){
@@ -73,7 +73,7 @@ public class Movements : MonoBehaviour {
 		}
 
 		//Right Movement
-		if (Input.GetKey(KeyCode.RightArrow) && notDead) {
+		if (Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.LeftArrow) && notDead) {
 			transform.position += Vector3.right * moveSpeed * Time.deltaTime;
 
 			if (isOnGround){

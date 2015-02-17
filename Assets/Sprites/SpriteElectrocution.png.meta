@@ -4,6 +4,9 @@ TextureImporter:
   fileIDToRecycleName:
     21300000: Right
     21300002: Left
+    21300004: SpriteElectrocution_0
+    21300006: SpriteElectrocution_1
+    21300008: SpriteElectrocution_2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -45,23 +48,33 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: Right
+    - name: SpriteElectrocution_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 102
-        width: 44
-        height: 98
+        x: 4
+        y: 202
+        width: 67
+        height: 97
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Left
+    - name: SpriteElectrocution_1
       rect:
         serializedVersion: 2
-        x: 3
-        y: 2
-        width: 44
-        height: 98
+        x: 4
+        y: 101
+        width: 67
+        height: 97
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpriteElectrocution_2
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 1
+        width: 67
+        height: 97
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
