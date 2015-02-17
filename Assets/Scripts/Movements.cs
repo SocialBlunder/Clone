@@ -7,6 +7,7 @@ public class Movements : MonoBehaviour {
 	public LevelManager levelManager;
 	public UI uI;
 	public AudioClips audioClips;
+	public FloatingPlatform floatingPlatform;
 	Animator myAnimator;
 
 	//Movement Variables
@@ -14,6 +15,7 @@ public class Movements : MonoBehaviour {
 	private Vector3 jumpPos = new Vector3 (0f, 130f, 0f);
 	private Vector3 downRayCast;
 	private Vector3 playerPos;
+	private bool isOnPlatform;
 	
 	//Animation Variables
 	private bool walkingDirection = true;
@@ -83,6 +85,12 @@ public class Movements : MonoBehaviour {
 			walkingDirection = true;
 		}
 
+		if (floatingPlatform.movingLeft && isOnPlatform) {
+			transform.position += Vector3.left * floatingPlatform.moveSpeed * Time.deltaTime;
+		} else if (!floatingPlatform.movingLeft && isOnPlatform) {
+			transform.position += Vector3.right * floatingPlatform.moveSpeed * Time.deltaTime;
+		}
+
 		//TODO: The transition from walking robot to smashed robot images can be
 		//done much better than this with a single sprite sheet and removing tags
 		//after smashed. It would require less code and less prefab objects.
@@ -118,6 +126,10 @@ public class Movements : MonoBehaviour {
 			uI.AddToScore(100);
 		}
 
+		if (collision.gameObject.CompareTag ("FloatingPlatformCollision")) {
+			floatingPlatform = collision.gameObject.GetComponent<FloatingPlatform>();
+			isOnPlatform = true;
+		}
 
 		if (collision.gameObject.CompareTag ("Robot") ||
 		    collision.gameObject.CompareTag ("HatchMonster") ||
@@ -136,6 +148,13 @@ public class Movements : MonoBehaviour {
 			rigidbody2D.velocity = jumpPos;
 
 			transform.collider2D.isTrigger = true;
+		}
+	}
+
+	void OnCollisionExit2D(Collision2D collision) {
+
+		if (collision.gameObject.CompareTag ("FloatingPlatformCollision")) {
+			isOnPlatform = false;
 		}
 	}
 }
