@@ -8,6 +8,24 @@ TextureImporter:
     21300006: walking right
     21300008: standing left
     21300010: walking left
+    21300012: r0
+    21300014: l0
+    21300016: r1
+    21300018: l1
+    21300020: r2
+    21300022: l2
+    21300024: r3
+    21300026: l3
+    21300028: r4
+    21300030: l4
+    21300032: r5
+    21300034: l5
+    21300036: r6
+    21300038: l6
+    21300040: r7
+    21300042: l7
+    21300044: r8
+    21300046: l8
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -49,43 +67,183 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: standing right
+    - name: r0
       rect:
         serializedVersion: 2
         x: 3
-        y: 301
+        y: 799
         width: 44
         height: 98
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: walking right
+    - name: l0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 205
+        x: 53
+        y: 799
         width: 44
-        height: 94
+        height: 98
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: standing left
+    - name: r1
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 701
+        width: 44
+        height: 96
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: l1
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 701
+        width: 44
+        height: 96
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: r2
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 603
+        width: 45
+        height: 96
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: l2
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 603
+        width: 45
+        height: 96
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: r3
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 504
+        width: 44
+        height: 97
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: l3
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 504
+        width: 44
+        height: 97
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: r4
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 404
+        width: 44
+        height: 98
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: l4
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 404
+        width: 44
+        height: 98
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: r5
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 304
+        width: 44
+        height: 98
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: l5
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 304
+        width: 44
+        height: 98
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: r6
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 204
+        width: 44
+        height: 98
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: l6
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 204
+        width: 44
+        height: 98
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: r7
       rect:
         serializedVersion: 2
         x: 3
         y: 106
         width: 44
-        height: 99
+        height: 96
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: walking left
+    - name: l7
       rect:
         serializedVersion: 2
-        x: 3
-        y: 11
+        x: 53
+        y: 106
         width: 44
-        height: 94
+        height: 96
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: r8
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 4
+        width: 44
+        height: 98
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: l8
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 5
+        width: 44
+        height: 98
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

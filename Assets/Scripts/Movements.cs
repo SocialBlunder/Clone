@@ -31,20 +31,26 @@ public class Movements : MonoBehaviour {
 		//Variables for jump raycasting
 		downRayCast = transform.TransformDirection(Vector3.down);
 		playerPos = new Vector3 (transform.position.x, transform.position.y -10f, 0f);
+		bool isOnGround = Physics2D.Raycast (playerPos, downRayCast, 4f);
 
 		if (!Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.LeftArrow) && notDead){
 			
-			if (walkingDirection){
+			if (walkingDirection && isOnGround){
 				myAnimator.CrossFade ("SpriteStandingRight", 0.0f);
-			} else if (!walkingDirection){
+			} else if (!walkingDirection && isOnGround){
 				myAnimator.CrossFade ("SpriteStandingLeft", 0.0f);
+			}
+
+			if (walkingDirection && !isOnGround){
+				myAnimator.CrossFade ("JumpRight", 0.0f);
+			} else if (!walkingDirection && !isOnGround){
+				myAnimator.CrossFade ("JumpLeft", 0.0f);
 			}
 		}
 
 		//Jump Movements
 		if ((Input.GetKeyDown(KeyCode.Space) || 
-		     Input.GetKeyDown(KeyCode.UpArrow)) && 
-		    (Physics2D.Raycast(playerPos, downRayCast, 4f)) && notDead) {
+		     Input.GetKeyDown(KeyCode.UpArrow)) && isOnGround && notDead) {
 
 			rigidbody2D.velocity = jumpPos;
 			audioClips.Jump ();
@@ -54,8 +60,12 @@ public class Movements : MonoBehaviour {
 		//Left Movement
 		if (Input.GetKey(KeyCode.LeftArrow) && notDead) {
 			transform.position += Vector3.left * moveSpeed * Time.deltaTime;
-			
-			myAnimator.CrossFade ("SpriteWalkingLeft", 0.0f);
+
+			if (isOnGround){
+				myAnimator.CrossFade ("SpriteWalkingLeft", 0.0f);
+			} else {
+				myAnimator.CrossFade ("JumpLeft", 0.0f);
+			}
 
 			walkingDirection = false;
 		}
@@ -63,8 +73,12 @@ public class Movements : MonoBehaviour {
 		//Right Movement
 		if (Input.GetKey(KeyCode.RightArrow) && notDead) {
 			transform.position += Vector3.right * moveSpeed * Time.deltaTime;
-			
-			myAnimator.CrossFade ("SpriteWalkingRight", 0.0f);
+
+			if (isOnGround){
+				myAnimator.CrossFade ("SpriteWalkingRight", 0.0f);
+			} else {
+				myAnimator.CrossFade ("JumpRight", 0.0f);
+			}
 
 			walkingDirection = true;
 		}
