@@ -11,7 +11,7 @@ TagManager:
   - SmallEnemy
   - FloatingPlatformTrigger
   - FloatingPlatformCollision
-  - 
+  - ShootAtom
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

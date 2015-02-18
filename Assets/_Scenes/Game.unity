@@ -5165,11 +5165,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 202377306}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< HEAD
-  m_LocalPosition: {x: -77.4000015, y: -22, z: 0}
-=======
   m_LocalPosition: {x: -62, y: -22.1000004, z: 0}
->>>>>>> 77cf73e761b38f579ebbe703368de9ff2fdd7a9d
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1694386067}
@@ -26932,7 +26928,6 @@ MonoBehaviour:
   atomUp: {fileID: 8300000, guid: 601a8c2a821b44fa99f5349fa7711782, type: 3}
   robotCrush: {fileID: 8300000, guid: 5d39d48b5a9de4599a7cb258318a2b81, type: 3}
   electrocution: {fileID: 8300000, guid: 42ab6e7db6028794cbdd57e2c409f7c3, type: 3}
-  shootExplosion: {fileID: 8300000, guid: 175d5aca6a1f24f41a4560f1a8348959, type: 3}
 --- !u!4 &1166888373
 Transform:
   m_ObjectHideFlags: 0

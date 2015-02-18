@@ -14,7 +14,7 @@ GameObject:
   - 114: {fileID: 11450656}
   m_Layer: 0
   m_Name: ShootAtom
-  m_TagString: Untagged
+  m_TagString: ShootAtom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68,6 +68,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ee9bc37cc857c94a9a35b3938b56529, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosion: {fileID: 116604, guid: a77464cc4b2059345b1d6225bad70785, type: 2}
 --- !u!212 &21250656
 SpriteRenderer:
   m_ObjectHideFlags: 1
