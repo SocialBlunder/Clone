@@ -103,14 +103,15 @@ public class Movements : MonoBehaviour {
 
 			if (robotHit.transform.gameObject.tag == "Robot" && notDead) {
 				Vector3 robotPos = robotHit.transform.position;
+				
+				GameObject robot = robotHit.transform.gameObject;
+				
+				walkingDirection = robot.GetComponent<Robot>().walkingLeft;
+				
 				Destroy (robotHit.transform.gameObject);
 
 				audioClips.RobotCrush();
 				uI.AddToScore(200);
-
-				GameObject robot = GameObject.Find("Robot");
-				
-				walkingDirection = robot.GetComponent<Robot>().walkingLeft;
 				
 				if (walkingDirection){
 					GameObject.Instantiate (robotSmashedLeft, robotPos, Quaternion.identity);
