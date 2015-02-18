@@ -8,6 +8,7 @@ public class AudioClips : MonoBehaviour {
 	public AudioClip atomUp;
 	public AudioClip robotCrush;
 	public AudioClip electrocution;
+	public AudioClip shootExplosion;
 	
 	public void Jump(){
 		audio.clip = jump;
@@ -26,6 +27,11 @@ public class AudioClips : MonoBehaviour {
 
 	public void Electrocution(){
 		audio.clip = electrocution;
+		audio.Play ();
+	}
+
+	public void ShootExplosion(){
+		audio.clip = shootExplosion;
 		audio.Play ();
 	}
 }

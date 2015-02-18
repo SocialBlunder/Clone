@@ -7,7 +7,7 @@ public class UI : MonoBehaviour {
 	public LevelManager levelManager;
 
 	public Text numOfAtomsText;
-	private int numOfAtoms = 0;
+	public int numOfAtoms = 0;
 	public Text countDownText;
 	private float countDown = 300;
 	public Text scoreText;
@@ -32,6 +32,11 @@ public class UI : MonoBehaviour {
 
 	public void AddAtom(){
 		numOfAtoms += 1;
+		numOfAtomsText.text = numOfAtoms.ToString ();
+	}
+
+	public void RemoveAtom(){
+		numOfAtoms -= 1;
 		numOfAtomsText.text = numOfAtoms.ToString ();
 	}
 

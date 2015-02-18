@@ -8,6 +8,7 @@ public class Movements : MonoBehaviour {
 	public UI uI;
 	public AudioClips audioClips;
 	public FloatingPlatform floatingPlatform;
+	public Shooter shooter;
 	Animator myAnimator;
 
 	//Movement Variables
@@ -18,7 +19,7 @@ public class Movements : MonoBehaviour {
 	private bool isOnPlatform;
 	
 	//Animation Variables
-	private bool walkingDirection = true;
+	public bool walkingDirection = true;
 	public GameObject robotSmashedLeft;
 	public GameObject robotSmashedRight;
 	private bool notDead = true;
@@ -51,12 +52,15 @@ public class Movements : MonoBehaviour {
 		}
 
 		//Jump Movements
-		if ((Input.GetKeyDown(KeyCode.Space) || 
-		     Input.GetKeyDown(KeyCode.UpArrow)) && isOnGround && notDead) {
+		if (Input.GetKeyDown(KeyCode.UpArrow) && isOnGround && notDead) {
 
 			rigidbody2D.velocity = jumpPos;
 			audioClips.Jump ();
 
+		}
+
+		if (Input.GetKeyDown (KeyCode.Space)) {
+			shooter.Shoot();
 		}
 
 		//Left Movement
